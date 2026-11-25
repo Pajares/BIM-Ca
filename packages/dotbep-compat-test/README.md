@@ -29,11 +29,14 @@ El comando demo genera `artifacts/dotbep-compat-demo.bep`.
 - Comprobar preservación de metadatos.
 - Modificar y volver a guardar.
 - Comprobar persistencia de un recurso adicional del ZIP.
+- Verificar commits `0.1` y `0.2`, `changelog.json`, diferencias y `baseline/bep.json`.
+- Guardar y reabrir el paquete, reconstruir estados históricos con `history.get()`.
+- Probar `history.revert()` como reversión no destructiva que crea una nueva versión.
 
 ## Fuera de alcance
 
-Estas pruebas no demuestran todavía compatibilidad integral del historial,
-workflows, persistencia de instancias, permisos, ni conformidad normativa.
+Estas pruebas no demuestran todavía compatibilidad integral de workflows,
+persistencia de instancias, permisos, ni conformidad normativa.
 Tampoco sustituyen pruebas de integración con archivos reales de proyectos.
 
 La versión de dependencia está fijada para hacer reproducible el ensayo.
