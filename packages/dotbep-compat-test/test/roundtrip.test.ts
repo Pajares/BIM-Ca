@@ -24,12 +24,14 @@ describe("@dotbep/core .bep round-trip", () => {
       name: "Edificación pública piloto",
       code: "PE-PILOTO-001",
       description: "Prueba de ida y vuelta",
-      customData: {
-        country: "PE",
-        investmentFramework: "Invierte.pe",
-        pilot: true
-      }
     });
+    // Bep.create() copia solo los campos básicos del proyecto; customData se
+    // asigna explícitamente después de crear la instancia para probar el schema.
+    original.data.project.customData = {
+      country: "PE",
+      investmentFramework: "Invierte.pe",
+      pilot: true
+    };
 
     await writeFile(file, await original.save());
 
