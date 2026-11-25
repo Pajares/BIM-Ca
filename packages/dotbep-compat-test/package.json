@@ -1,0 +1,23 @@
+{
+  "name": "@bim-ca/dotbep-compat-test",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Pruebas aisladas de compatibilidad con @dotbep/core para dotBEP-PE.",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "demo": "tsx src/compatibility.ts"
+  },
+  "dependencies": {
+    "@dotbep/core": "0.2.24",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.13",
+    "tsx": "4.19.2",
+    "typescript": "5.9.3",
+    "vitest": "4.1.9"
+  }
+}
