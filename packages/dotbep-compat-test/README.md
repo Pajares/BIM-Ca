@@ -32,11 +32,15 @@ El comando demo genera `artifacts/dotbep-compat-demo.bep`.
 - Verificar commits `0.1` y `0.2`, `changelog.json`, diferencias y `baseline/bep.json`.
 - Guardar y reabrir el paquete, reconstruir estados históricos con `history.get()`.
 - Probar `history.revert()` como reversión no destructiva que crea una nueva versión.
+- Crear workflows, consultar estado, emitir eventos y comprobar el historial de transiciones.
+- Verificar cancelación y registro del actor en el historial de la instancia.
+- Comprobar persistencia mediante un adaptador de prueba `InstanceStore` compartido entre reinicializaciones del motor.
 
 ## Fuera de alcance
 
-Estas pruebas no demuestran todavía compatibilidad integral de workflows,
-persistencia de instancias, permisos, ni conformidad normativa.
+El adaptador compartido es una simulación de contrato, no una base de datos de producción.
+Las pruebas no demuestran todavía persistencia real con PostgreSQL, autorización institucional,
+ni conformidad normativa.
 Tampoco sustituyen pruebas de integración con archivos reales de proyectos.
 
 La versión de dependencia está fijada para hacer reproducible el ensayo.
