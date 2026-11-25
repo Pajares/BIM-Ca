@@ -63,7 +63,7 @@ describe("@dotbep/core workflow engine and instance persistence", () => {
             review: {
               type: "process",
               actionId,
-              responsibleRoleIds: [],
+              responsibleEmails: ["revisor@example.invalid"],
             },
             end: { type: "end" },
           },
