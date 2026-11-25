@@ -35,14 +35,17 @@ El comando demo genera `artifacts/dotbep-compat-demo.bep`.
 - Crear workflows, consultar estado, emitir eventos y comprobar el historial de transiciones.
 - Verificar cancelación y registro del actor en el historial de la instancia.
 - Comprobar persistencia mediante un adaptador de prueba `InstanceStore` compartido entre reinicializaciones del motor.
+- Verificar autorización RACI con el motor inicializado sin `skipRaci`: intersección rol-equipo, prioridad de Responsible sobre Accountable, autorización por correo explícito y registro de intentos denegados.
 
 ## Fuera de alcance
 
 El adaptador compartido es una simulación de contrato, no una base de datos de producción.
-Las pruebas no demuestran todavía persistencia real con PostgreSQL, autorización institucional,
-ni conformidad normativa.
-Tampoco sustituyen pruebas de integración con archivos reales de proyectos.
+Las pruebas no demuestran todavía persistencia real con PostgreSQL ni recuperación tras reinicio de proceso.
+Tampoco prueban políticas institucionales completas, autorización para cancelar instancias,
+segregación administrativa de aprobación ni conformidad normativa.
+La matriz RACI de dotBEP debe evaluarse por separado para confirmar cómo representa asignaciones por equipo y correo, además de roles.
+Las pruebas no sustituyen pruebas de integración con archivos reales de proyectos.
 
 La versión de dependencia está fijada para hacer reproducible el ensayo.
-No se declara que las pruebas hayan sido ejecutadas hasta disponer de un
-entorno Node.js y registrar sus resultados.
+Los resultados de ejecución local deben registrarse por separado; un archivo de prueba incorporado
+al repositorio no implica que se haya ejecutado en todos los entornos.
