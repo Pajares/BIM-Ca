@@ -10,13 +10,14 @@ await mkdir(outputDir, { recursive: true });
 const bep = Bep.create({
   name: "Proyecto piloto de edificación pública",
   code: "PILOTO-PE",
-  description: "Paquete de prueba de compatibilidad dotBEP-PE",
-  customData: {
-    country: "PE",
-    investmentFramework: "Invierte.pe",
-    compatibilityPrototype: true
-  }
+  description: "Paquete de prueba de compatibilidad dotBEP-PE"
 });
+// Bep.create() no transfiere customData; se agrega explícitamente a la instancia.
+bep.data.project.customData = {
+  country: "PE",
+  investmentFramework: "Invierte.pe",
+  compatibilityPrototype: true
+};
 
 await bep.setSkillResource(
   "bep-authoring",
